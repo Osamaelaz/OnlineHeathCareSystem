@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Online Health System</title>
+
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../../css/Addmin/AdminDashBoard/AdminDashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-icon-only">
+                    <i class="fa-solid fa-shield-heart"></i>
+                </div>
+            </div>
+
+            <div class="sidebar-nav">
+                <a href="../../../html/Addmin/AdminDashBoard/AdminDashboard.html" class="nav-item active"
+                    data-tooltip="Dashboard">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span class="item-text">Dashboard</span>
+                </a>
+                <a href="../../../html/Addmin/UserMangment/usermangment.html" class="nav-item"
+                    data-tooltip="User Management">
+                    <i class="fa-solid fa-users-gear"></i>
+                    <span class="item-text">User Management</span>
+                </a>
+
+                <a href="../../../html/Addmin/ApproveDoctors/ApproveDoctors.html" class="nav-item"
+                    data-tooltip="Approve Doctors">
+                    <i class="fa-solid fa-user-check"></i>
+                    <span class="item-text">Approve Doctors</span>
+                </a>
+                <a href="../../../html/Addmin/AdminDashBoard/SystemReports.html" class="nav-item"
+                    data-tooltip="System Reports">
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <span class="item-text">System Reports</span>
+                </a>
+                <a href="../../../html/Addmin/AdminDashBoard/Settings.html" class="nav-item" data-tooltip="Settings">
+                    <i class="fa-solid fa-gear"></i>
+                    <span class="item-text">Settings</span>
+                </a>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="../../../index.html" class="nav-item" data-tooltip="Logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="item-text">Logout</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="nav">
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <button id="sidebarToggle" class="icon-btn" aria-label="Toggle sidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+                <div class="top-bar-right">
+                    <button id="themeToggle" class="icon-btn" title="Toggle Theme" aria-label="Toggle dark mode">
+                        <i class="fa-regular fa-moon"></i>
+                    </button>
+                    <div class="divider-vertical"></div>
+                    <div class="user-profile">
+                        <span class="user-name">Admin</span>
+                        <div class="profile-img-container">
+                            <img src="../../../images/admin-profile.png" alt="Profile" class="profile-img">
+                            <span class="status-dot-profile"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <main class="main-content">
+                <div class="dashboard-header">
+                    <h1 class="page-title">Admin Dashboard</h1>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon total-users">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalUsers">0</h3>
+                            <p>Total Users</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon total-patients">
+                            <i class="fa-solid fa-user-injured"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalPatients">0</h3>
+                            <p>Total Patients</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon active-doctors">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="activeDoctors">0</h3>
+                            <p>Active Doctors</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon pending-apps">
+                            <i class="fa-solid fa-user-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="pendingApps">0</h3>
+                            <p>Pending Applications</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <section class="card user-management">
+                        <div class="card-header">
+                            <h2>Recent Users</h2>
+                            <a href="/html/Addmin/UserMangment/usermangment.html" class="btn btn-outline">View All
+                                Users</a>
+                        </div>
+                        <table class="user-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usersTableBody">
+                                <tr>
+                                    <td colspan="5" style="text-align:center; padding:60px; color:var(--text-muted);">
+                                        <i class="fa-solid fa-spinner fa-spin" style="font-size:32px;"></i>
+                                        <p>Loading users...</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="pagination-wrapper">
+                            <button id="prevPage" class="page-btn" disabled>Previous</button>
+                            <span id="pageInfo" style="align-self:center; color:var(--text-muted); font-size:14px;">Page
+                                1 of 1</span>
+                            <button id="nextPage" class="page-btn">Next</button>
+                        </div>
+                    </section>
+
+                    <section class="card doctor-applications">
+                        <div class="card-header">
+                            <h2>Doctor Applications</h2>
+                            <a href="/html/Addmin/ApproveDoctors/ApproveDoctors.html" class="btn btn-outline">View
+                                All</a>
+                        </div>
+                        <div class="applications-list" id="applicationsList">
+                            <div style="text-align:center; padding:60px; color:var(--text-muted);">
+                                <i class="fa-solid fa-spinner fa-spin" style="font-size:32px; margin-bottom:16px;"></i>
+                                <p>Loading applications...</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="../../../storage.js"></script>
+    <script src="../../../script.js"></script>
+    <script src="../../../js/Addmin/AdminDashBoard/AdminDashboard.js"></script>
+</body>
+
+</html>

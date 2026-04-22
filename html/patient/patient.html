@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Online Health System</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../css/patient/patient-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-icon-only">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+            </div>
+
+            <div class="sidebar-nav">
+                <a href="patient.html" class="nav-item active" data-tooltip="Dashboard">
+                    <i class="fa-solid fa-house-medical"></i>
+                    <span class="item-text">Dashboard</span>
+                </a>
+                <a href="book-appointment.html" class="nav-item" data-tooltip="Book Appointment">
+                    <i class="fa-solid fa-calendar-plus"></i>
+                    <span class="item-text">Book Appointment</span>
+                </a>
+                <a href="my-appointments.html" class="nav-item" data-tooltip="My Appointments">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span class="item-text">My Appointments</span>
+                </a>
+                <a href="medical-records.html" class="nav-item" data-tooltip="Medical Records">
+                    <i class="fa-solid fa-file-medical"></i>
+                    <span class="item-text">Medical Records</span>
+                </a>
+                <a href="profile.html" class="nav-item" data-tooltip="Profile">
+                    <i class="fa-solid fa-user"></i>
+                    <span class="item-text">Profile</span>
+                </a>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="index.html" class="nav-item" data-tooltip="Logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="item-text">Logout</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="nav">
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <button id="sidebarToggle" class="icon-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+                <div class="top-bar-right">
+                    <button id="themeToggle" class="icon-btn">
+                        <i class="fa-regular fa-moon"></i>
+                    </button>
+                    <div class="divider-vertical"></div>
+                    <div class="user-profile">
+                        <span class="user-name">Aziz</span>
+                        <div class="profile-img-container">
+                            <img src="/images/patient-profile.png" class="profile-img profile-img-blue">
+                            <span class="status-dot-profile"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="main-content">
+                <div class="welcome-section">
+                    <div class="welcome-text">
+                        <h1>Good Morning, Aziz! 👋</h1>
+                        <p>Stay updated with your health journey.</p>
+                    </div>
+                    <div class="welcome-icon">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon blue">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>0</h3>
+                            <p>Total Appointments</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon green">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>0</h3>
+                            <p>Upcoming Appointments</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon orange">
+                            <i class="fa-solid fa-file-medical"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>0</h3>
+                            <p>Medical Records</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon purple">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>0</h3>
+                            <p>Doctors Consulted</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reminder-card" style="display: none;">
+                    <div class="reminder-header">
+                        <i class="fa-solid fa-bell"></i>
+                        <h3>Appointment Reminder</h3>
+                    </div>
+                    <p class="reminder-text">You have a confirmed appointment with Dr. Sarah Smith on 13/01/2026 at
+                        10:30.</p>
+                    <a href="#" class="view-details-btn">View Details →</a>
+                </div>
+
+                <h2 class="section-title">
+                    <i class="fa-solid fa-calendar-days"></i> Your Upcoming Appointments
+                </h2>
+                <div class="appointments-grid">
+                    <!-- Dynamic appointments loaded here -->
+                    <div class="loading-state">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Loading your upcoming appointments...</p>
+                    </div>
+                </div>
+
+                <h2 class="section-title">
+                    <i class="fa-solid fa-bolt"></i> Quick Actions
+                </h2>
+                <div class="quick-actions-grid">
+                    <div class="action-card primary" onclick="window.location.href='book-appointment.html'">
+                        <div class="action-icon">
+                            <i class="fa-solid fa-calendar-plus"></i>
+                        </div>
+                        <h4>Book New Appointment</h4>
+                        <p>Schedule your next visit with a doctor</p>
+                    </div>
+
+                    <div class="action-card" onclick="window.location.href='medical-records.html'">
+                        <div class="action-icon">
+                            <i class="fa-solid fa-file-medical"></i>
+                        </div>
+                        <h4>Medical Records</h4>
+                        <p>Access your health history and test results securely</p>
+                    </div>
+
+                    <div class="action-card" onclick="window.location.href='profile.html'">
+                        <div class="action-icon">
+                            <i class="fa-solid fa-user-pen"></i>
+                        </div>
+                        <h4>Profile Management</h4>
+                        <p>Update your personal information and contact details</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointment Details Modal -->
+    <div id="appointmentModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-calendar-check"></i> Appointment Details</h2>
+                <span class="close-modal" onclick="closeAppointmentModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="detail-row">
+                    <strong><i class="fa-regular fa-calendar"></i> Date:</strong>
+                    <span id="modalDate"></span>
+                </div>
+                <div class="detail-row">
+                    <strong><i class="fa-regular fa-clock"></i> Time:</strong>
+                    <span id="modalTime"></span>
+                </div>
+                <div class="detail-row">
+                    <strong><i class="fa-solid fa-user-doctor"></i> Doctor:</strong>
+                    <span id="modalDoctor"></span>
+                </div>
+                <div class="detail-row">
+                    <strong><i class="fa-solid fa-stethoscope"></i> Specialty:</strong>
+                    <span id="modalSpecialty"></span>
+                </div>
+                <div class="detail-row">
+                    <strong><i class="fa-solid fa-notes-medical"></i> Reason:</strong>
+                    <span id="modalReason"></span>
+                </div>
+                <div class="detail-row">
+                    <strong><i class="fa-solid fa-circle-info"></i> Status:</strong>
+                    <span id="modalStatus" class="status-badge"></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeAppointmentModal()">
+                    <i class="fa-solid fa-xmark"></i> Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="../../storage.js"></script>
+    <script src="../../script.js"></script>
+    <script src="../../js/patient/patient-script.js"></script>
+    <script>
+        // Use the centralized logout function
+        document.querySelector('[data-tooltip="Logout"]').addEventListener('click', (e) => {
+            e.preventDefault();
+            HealthcareStorage.auth.logout();
+        });
+    </script>
+</body>
+
+</html>

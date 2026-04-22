@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Records - Online Health System</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../css/patient/medical-records-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- إضافة jsPDF لتوليد PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-icon-only">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+            </div>
+
+            <div class="sidebar-nav">
+                <a href="patient.html" class="nav-item" data-tooltip="Dashboard">
+                    <i class="fa-solid fa-house-medical"></i>
+                    <span class="item-text">Dashboard</span>
+                </a>
+                <a href="book-appointment.html" class="nav-item" data-tooltip="Book Appointment">
+                    <i class="fa-solid fa-calendar-plus"></i>
+                    <span class="item-text">Book Appointment</span>
+                </a>
+                <a href="my-appointments.html" class="nav-item" data-tooltip="My Appointments">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span class="item-text">My Appointments</span>
+                </a>
+                <a href="medical-records.html" class="nav-item active" data-tooltip="Medical Records">
+                    <i class="fa-solid fa-pills"></i> <!-- غيرنا الأيقونة إلى حبوب -->
+                    <span class="item-text">Medical Records</span>
+                </a>
+                <a href="profile.html" class="nav-item" data-tooltip="Profile">
+                    <i class="fa-solid fa-user"></i>
+                    <span class="item-text">Profile</span>
+                </a>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="#" class="nav-item" data-tooltip="Logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="item-text">Logout</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="nav">
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <button id="sidebarToggle" class="icon-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="breadcrumb">
+                        <span>Patient</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <span class="active">Prescriptions</span> <!-- غيرنا النص هنا بس -->
+                    </div>
+                </div>
+
+                <div class="top-bar-right">
+                    <button id="themeToggle" class="icon-btn" title="Toggle Theme">
+                        <i class="fa-regular fa-moon"></i>
+                    </button>
+                    <div class="divider-vertical"></div>
+                    <div class="user-profile">
+                        <span class="user-name">Loading...</span>
+                        <div class="profile-img-container">
+                            <img src="../../images/patient-profile.png" alt="Profile" class="profile-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="page-header">
+                    <div>
+                        <h1><i class="fa-solid fa-pills"></i> Prescriptions</h1>
+                        <p>Access your prescribed medications and instructions.</p>
+                    </div>
+                </div>
+
+                <div class="records-container" id="recordsList">
+                    <div class="loading-state">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Fetching your prescriptions...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Prescription Detail Modal -->
+    <div id="recordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Prescription Details</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body" id="recordDetailBody">
+                <!-- Details go here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Close</button>
+                <button class="btn-primary" id="downloadRecord"><i class="fas fa-download"></i> Download PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../storage.js"></script>
+    <script src="../../script.js"></script>
+    <script src="../../js/patient/medical-records.js"></script>
+</body>
+
+</html>

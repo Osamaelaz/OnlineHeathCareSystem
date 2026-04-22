@@ -1,0 +1,138 @@
+/* css/Doctor/prescriptions.css */
+
+.main-content {
+    padding: 32px;
+}
+
+.card h3 {
+    margin-bottom: 24px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card h3 i {
+    color: var(--primary);
+}
+
+/* Prescriptions Table Styling */
+.table-responsive {
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--bg-body);
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th {
+    background: rgba(106, 94, 253, 0.05);
+    padding: 18px 20px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border-bottom: 2px solid var(--border);
+}
+
+td {
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--text-main);
+    vertical-align: middle;
+}
+
+tr:hover td {
+    background: rgba(106, 94, 253, 0.02);
+}
+
+/* Medication Tag */
+.medication-tag {
+    display: inline-block;
+    background: rgba(106, 94, 253, 0.08);
+    color: var(--primary);
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 12px;
+    border: 1px solid rgba(106, 94, 253, 0.1);
+    box-shadow: 0 2px 4px rgba(106, 94, 253, 0.05);
+}
+
+[data-theme="dark"] .medication-tag {
+    background: rgba(106, 94, 253, 0.15);
+    border-color: rgba(106, 94, 253, 0.2);
+}
+
+/* Date Styling */
+.date-text {
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 13px;
+    letter-spacing: 0.3px;
+}
+
+/* Action Buttons Styling */
+.action-btns {
+    display: flex;
+    gap: 12px;
+}
+
+.action-btns .icon-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 16px;
+    border: 1px solid transparent;
+}
+
+.print-btn {
+    background: rgba(106, 94, 253, 0.1);
+    color: var(--primary);
+    border-color: rgba(106, 94, 253, 0.1) !important;
+}
+
+.print-btn:hover {
+    background: var(--primary);
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(106, 94, 253, 0.2);
+}
+
+.pdf-btn {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.1) !important;
+}
+
+.pdf-btn:hover {
+    background: #ef4444;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+/* Patient Name */
+.patient-name-cell {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* Empty State Styling */
+#prescription-history td[colspan="5"] {
+    color: var(--text-muted);
+    font-style: italic;
+    background: var(--bg-body);
+}

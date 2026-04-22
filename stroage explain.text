@@ -1,0 +1,37 @@
+Implementing TODO Functions
+Guidelines :
+1. Use the Generic CRUD Functions
+Don't write localStorage code from scratch. Use these helper functions:
+javascript// Already available:
+getAll(storageKey)           // Get all items
+getById(storageKey, id)      // Get one item by ID
+create(storageKey, data)     // Create new item
+update(storageKey, id, data) // Update existing item
+deleteItem(storageKey, id)   // Delete item
+query(storageKey, predicate) // Filter items
+2. Function Implementation Pattern
+Each TODO function should follow this pattern:
+javascriptfunction createUser(userData) {
+  // Step 1: Validate input (check if required fields exist)
+  
+  // Step 2: Check business rules (e.g., email must be unique)
+  
+  // Step 3: Use generic CRUD function (create, update, etc.)
+  
+  // Step 4: Return result
+}
+3. Example: How to Implement a TODO
+TODO Function:
+javascriptfunction getAllPatients() {
+  //TODO
+}
+Implementation:
+javascriptfunction getAllPatients() {
+  // Use query() to filter users where role is 'patient'
+  return query(STORAGE_KEYS.USERS, u => u.role === 'patient');
+}
+Explanation:
+
+query() takes a storage key and a filter function
+u => u.role === 'patient' returns only users with role 'patient'
+Returns an array of patient objects

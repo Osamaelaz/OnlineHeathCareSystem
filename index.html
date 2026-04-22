@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCare System - Modern Medical Management Platform</title>
+    <meta name="description"
+        content="Advanced healthcare management system connecting patients and doctors seamlessly with comprehensive appointment booking, medical records, and prescription management.">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/landing.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>HealthCare</span>
+            </div>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#privacy" class="nav-link">Privacy</a></li>
+                <li><a href="html/Auth/login.html" class="btn btn-primary">Login</a></li>
+                <li><a href="html/Auth/register.html" class="btn btn-outline">Sign Up</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fa-regular fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-shape shape-1"></div>
+            <div class="hero-shape shape-2"></div>
+            <div class="hero-shape shape-3"></div>
+        </div>
+
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge" data-aos="fade-down">
+                    <i class="fa-solid fa-sparkles"></i>
+                    <span>Next Generation Healthcare</span>
+                </div>
+
+                <h1 data-aos="fade-up" data-aos-delay="100">
+                    Your Health, <span class="gradient-text">Our Priority</span>
+                </h1>
+
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
+                    Experience seamless healthcare management with our state-of-the-art platform.
+                    Connect with top doctors, manage appointments, and access your medical records
+                    anytime, anywhere.
+                </p>
+
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+                    <a href="html/Auth/register.html" class="btn btn-primary btn-large">
+                        <span>Get Started</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#features" class="btn btn-glass btn-large">
+                        <i class="fa-solid fa-play"></i>
+                        <span>Learn More</span>
+                    </a>
+                </div>
+
+                <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>Doctors</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <h3>10K+</h3>
+                        <p>Patients</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <h3>50K+</h3>
+                        <p>Appointments</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
+                <div class="visual-card card-1">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <div class="card-content">
+                        <h4>Expert Doctors</h4>
+                        <p>Certified professionals</p>
+                    </div>
+                    <div class="card-badge">24/7</div>
+                </div>
+
+                <div class="visual-card card-2">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <div class="card-content">
+                        <h4>Easy Booking</h4>
+                        <p>Schedule in seconds</p>
+                    </div>
+                    <div class="card-progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+
+                <div class="visual-card card-3">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-file-medical"></i>
+                    </div>
+                    <div class="card-content">
+                        <h4>Digital Records</h4>
+                        <p>Secure & accessible</p>
+                    </div>
+                    <div class="card-pulse"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Features</span>
+                <h2>Everything You Need for <span class="gradient-text">Better Healthcare</span></h2>
+                <p>Comprehensive tools designed to make healthcare management effortless</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <h3>Smart Appointment Booking</h3>
+                    <p>Book appointments with your preferred doctors in just a few clicks. Real-time availability and
+                        instant confirmations.</p>
+                    <a href="#" class="feature-link">
+                        <span>Learn more</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-notes-medical"></i>
+                    </div>
+                    <h3>Digital Medical Records</h3>
+                    <p>Access your complete medical history anytime. Secure cloud storage with end-to-end encryption.
+                    </p>
+                    <a href="#" class="feature-link">
+                        <span>Learn more</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-prescription"></i>
+                    </div>
+                    <h3>E-Prescriptions</h3>
+                    <p>Receive and manage digital prescriptions. Easy refills and medication tracking included.</p>
+                    <a href="#" class="feature-link">
+                        <span>Learn more</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3>HIPAA Compliant</h3>
+                    <p>Your privacy is our priority. All data is encrypted and complies with healthcare regulations.</p>
+                    <a href="#" class="feature-link">
+                        <span>Learn more</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+                    <h3>Smart Reminders</h3>
+                    <p>Never miss an appointment or medication. Automated notifications keep you on track.</p>
+                    <a href="#" class="feature-link">
+                        <span>Learn more</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3>Health Analytics</h3>
+                    <p>Track your health metrics and progress over time with intuitive dashboards and reports.</p>
+                    <a href="#" class="feature-link">
+                        <span>Learn more</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <span class="section-badge">About Us</span>
+                    <h2>Transforming Healthcare <span class="gradient-text">Together</span></h2>
+                    <p class="about-lead">
+                        We're on a mission to make quality healthcare accessible to everyone through technology.
+                    </p>
+                    <p>
+                        Founded in 2025, HealthCare System brings together cutting-edge technology and
+                        healthcare expertise to create a seamless experience for patients and doctors alike.
+                        Our platform eliminates the complexities of traditional healthcare systems, making
+                        it easier than ever to manage your health.
+                    </p>
+
+                    <div class="about-features">
+                        <div class="about-feature-item">
+                            <div class="about-feature-icon">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4>Patient-Centered Care</h4>
+                                <p>Every feature is designed with your needs in mind</p>
+                            </div>
+                        </div>
+
+                        <div class="about-feature-item">
+                            <div class="about-feature-icon">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4>Trusted by Thousands</h4>
+                                <p>Join our growing community of satisfied users</p>
+                            </div>
+                        </div>
+
+                        <div class="about-feature-item">
+                            <div class="about-feature-icon">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4>Always Improving</h4>
+                                <p>Regular updates based on user feedback</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-cta">
+                        <a href="html/Auth/register.html" class="btn btn-primary">Join Us Today</a>
+                        <a href="#contact" class="btn btn-outline">Contact Us</a>
+                    </div>
+                </div>
+
+                <div class="about-visual" data-aos="fade-left">
+                    <div class="about-image-wrapper">
+                        <img src="images/Gemini_Generated_Image_206w0k206w0k206w.png" alt="Healthcare professionals"
+                            class="about-image">
+                        <div class="about-floating-card card-1">
+                            <i class="fa-solid fa-users"></i>
+                            <div>
+                                <h4>10,000+</h4>
+                                <p>Happy Patients</p>
+                            </div>
+                        </div>
+                        <div class="about-floating-card card-2">
+                            <i class="fa-solid fa-star"></i>
+                            <div>
+                                <h4>4.9/5</h4>
+                                <p>User Rating</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Process</span>
+                <h2>How It <span class="gradient-text">Works</span></h2>
+                <p>Get started in three simple steps</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+                    <h3>Create Account</h3>
+                    <p>Sign up in seconds with your email. No credit card required to get started.</p>
+                </div>
+
+                <div class="step-connector" data-aos="fade-up" data-aos-delay="200"></div>
+
+                <div class="step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <h3>Find Doctor</h3>
+                    <p>Browse our network of qualified doctors and choose the one that fits your needs.</p>
+                </div>
+
+                <div class="step-connector" data-aos="fade-up" data-aos-delay="400"></div>
+
+                <div class="step" data-aos="fade-up" data-aos-delay="500">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <h3>Book Appointment</h3>
+                    <p>Select your preferred time slot and get instant confirmation. It's that easy!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Section -->
+    <section class="privacy-policy" id="privacy">
+        <div class="container">
+            <div class="policy-content" data-aos="fade-up">
+                <div class="section-header">
+                    <span class="section-badge">Legal</span>
+                    <h2>Privacy <span class="gradient-text">Policy</span></h2>
+                    <p class="last-updated">Last updated: January 2026</p>
+                </div>
+
+                <div class="policy-grid">
+                    <div class="policy-card">
+                        <div class="policy-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3>Data Protection</h3>
+                        <p>We use industry-standard encryption to protect your personal and medical information. Your
+                            data is stored securely and never shared without your explicit consent.</p>
+                    </div>
+
+                    <div class="policy-card">
+                        <div class="policy-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <h3>Information We Collect</h3>
+                        <p>We collect only the information necessary to provide our services: name, contact details,
+                            medical history, and appointment data. All collection is transparent and with your consent.
+                        </p>
+                    </div>
+
+                    <div class="policy-card">
+                        <div class="policy-icon">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <h3>Your Rights</h3>
+                        <p>You have the right to access, modify, or delete your data at any time. You can also request a
+                            copy of all information we hold about you.</p>
+                    </div>
+
+                    <div class="policy-card">
+                        <div class="policy-icon">
+                            <i class="fa-solid fa-cookie-bite"></i>
+                        </div>
+                        <h3>Cookies & Tracking</h3>
+                        <p>We use cookies to improve your experience. You can disable cookies in your browser settings,
+                            though some features may be limited.</p>
+                    </div>
+
+                    <div class="policy-card">
+                        <div class="policy-icon">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </div>
+                        <h3>Data Sharing</h3>
+                        <p>We never sell your data. Information is shared only with your healthcare providers and only
+                            for the purpose of delivering care.</p>
+                    </div>
+
+                    <div class="policy-card">
+                        <div class="policy-icon">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <h3>Security Measures</h3>
+                        <p>We employ multiple layers of security including SSL encryption, regular security audits, and
+                            strict access controls to protect your data.</p>
+                    </div>
+                </div>
+
+                <div class="policy-footer">
+                    <p><strong>Questions about our privacy policy?</strong> Contact us at <a
+                            href="mailto:privacy@healthcare.com">privacy@healthcare.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms of Service -->
+    <section class="terms" id="terms">
+        <div class="container">
+            <div class="terms-content" data-aos="fade-up">
+                <div class="section-header">
+                    <span class="section-badge">Legal</span>
+                    <h2>Terms of <span class="gradient-text">Service</span></h2>
+                </div>
+
+                <div class="terms-text">
+                    <div class="term-section">
+                        <h3><i class="fa-solid fa-gavel"></i> Acceptance of Terms</h3>
+                        <p>By accessing and using HealthCare System, you accept and agree to be bound by the terms and
+                            provision of this agreement. If you do not agree to these terms, please do not use our
+                            service.</p>
+                    </div>
+
+                    <div class="term-section">
+                        <h3><i class="fa-solid fa-user-check"></i> User Responsibilities</h3>
+                        <p>You are responsible for maintaining the confidentiality of your account and password. You
+                            agree to provide accurate and complete information when creating an account and to update
+                            this information as necessary.</p>
+                    </div>
+
+                    <div class="term-section">
+                        <h3><i class="fa-solid fa-stethoscope"></i> Medical Information Disclaimer</h3>
+                        <p>While we facilitate connections between patients and healthcare providers, we do not provide
+                            medical advice. Always consult with qualified healthcare professionals for medical concerns.
+                        </p>
+                    </div>
+
+                    <div class="term-section">
+                        <h3><i class="fa-solid fa-ban"></i> Prohibited Uses</h3>
+                        <p>You may not use our service for any illegal purposes, to transmit harmful code, or to violate
+                            any laws in your jurisdiction. We reserve the right to terminate accounts that violate these
+                            terms.</p>
+                    </div>
+
+                    <div class="term-section">
+                        <h3><i class="fa-solid fa-scale-balanced"></i> Limitation of Liability</h3>
+                        <p>HealthCare System shall not be liable for any indirect, incidental, special, consequential,
+                            or punitive damages resulting from your use of the service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info" data-aos="fade-right">
+                    <span class="section-badge">Get in Touch</span>
+                    <h2>Let's <span class="gradient-text">Connect</span></h2>
+                    <p>Have questions? We're here to help. Reach out to our team and we'll get back to you as soon as
+                        possible.</p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email Us</h4>
+                                <a href="mailto:support@healthcare.com">support@healthcare.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Call Us</h4>
+                                <a href="tel:+1234567890">+1 (234) 567-890</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4>Visit Us</h4>
+                                <p>123 Healthcare St, Medical City, MC 12345</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper" data-aos="fade-left">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Send Message</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        <span>HealthCare</span>
+                    </div>
+                    <p>Making quality healthcare accessible to everyone through innovative technology.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>For Patients</h4>
+                    <ul>
+                        <li><a href="html/Auth/register.html">Sign Up</a></li>
+                        <li><a href="html/Auth/login.html">Login</a></li>
+                        <li><a href="html/patient/book-appointment.html">Book Appointment</a></li>
+                        <li><a href="html/patient/medical-records.html">Medical Records</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>For Doctors</h4>
+                    <ul>
+                        <li><a href="html/Auth/register.html">Join Us</a></li>
+                        <li><a href="html/Auth/login.html">Doctor Login</a></li>
+                        <li><a href="html/Doctor/doctor-db.html">Dashboard</a></li>
+                        <li><a href="html/Doctor/My Schedule.html">My Schedule</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#contact">Support</a></li>
+                        <li><a href="#about">Company Info</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 HealthCare System. All rights reserved.</p>
+                <p>Made with <i class="fa-solid fa-heart"></i> for better healthcare</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/landing.js"></script>
+</body>
+
+</html>

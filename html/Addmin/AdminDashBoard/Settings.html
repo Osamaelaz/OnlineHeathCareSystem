@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Admin Dashboard</title>
+
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../../css/Addmin/AdminDashBoard/AdminDashboard.css">
+    <link rel="stylesheet" href="../../../css/Addmin/AdminDashBoard/Settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-icon-only">
+                    <i class="fa-solid fa-shield-heart"></i>
+                </div>
+            </div>
+
+            <div class="sidebar-nav">
+                <a href="../../../html/Addmin/AdminDashBoard/AdminDashboard.html" class="nav-item"
+                    data-tooltip="Dashboard">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span class="item-text">Dashboard</span>
+                </a>
+                <a href="../../../html/Addmin/UserMangment/usermangment.html" class="nav-item"
+                    data-tooltip="User Management">
+                    <i class="fa-solid fa-users-gear"></i>
+                    <span class="item-text">User Management</span>
+                </a>
+                <a href="../../../html/Addmin/ApproveDoctors/ApproveDoctors.html" class="nav-item"
+                    data-tooltip="Approve Doctors">
+                    <i class="fa-solid fa-user-check"></i>
+                    <span class="item-text">Approve Doctors</span>
+                </a>
+                <a href="../../../html/Addmin/AdminDashBoard/SystemReports.html" class="nav-item"
+                    data-tooltip="System Reports">
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <span class="item-text">System Reports</span>
+                </a>
+                <a href="../../../html/Addmin/AdminDashBoard/Settings.html" class="nav-item active"
+                    data-tooltip="Settings">
+                    <i class="fa-solid fa-gear"></i>
+                    <span class="item-text">Settings</span>
+                </a>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="../../../index.html" class="nav-item" data-tooltip="Logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="item-text">Logout</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="nav">
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <button id="sidebarToggle" class="icon-btn" aria-label="Toggle sidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+                <div class="top-bar-right">
+                    <button id="themeToggle" class="icon-btn" title="Toggle Theme" aria-label="Toggle dark mode">
+                        <i class="fa-regular fa-moon"></i>
+                    </button>
+                    <div class="divider-vertical"></div>
+                    <div class="user-profile">
+                        <span class="user-name">Admin</span>
+                        <div class="profile-img-container">
+                            <img src="../../../images/admin-profile.png" alt="Profile" class="profile-img">
+                            <span class="status-dot-profile"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <main class="main-content settings-page">
+                <div class="page-header">
+                    <div class="page-title-section">
+                        <h1 class="page-title">
+                            <i class="fa-solid fa-gear"></i> Settings
+                        </h1>
+                        <p class="page-subtitle">Manage your admin profile and account settings</p>
+                    </div>
+                </div>
+
+                <div class="settings-container">
+                    <div class="settings-card">
+                        <div class="card-header">
+                            <h2><i class="fa-solid fa-user-circle"></i> Profile Information</h2>
+                        </div>
+
+                        <form id="adminProfileForm" class="settings-form">
+                            <div class="profile-image-section">
+                                <div class="profile-image-wrapper">
+                                    <img src="../../../images/admin-profile.png" id="adminProfilePreview"
+                                        alt="Profile Picture">
+                                    <div class="image-overlay">
+                                        <label for="adminProfileImg" class="image-upload-btn">
+                                            <i class="fa-solid fa-camera"></i>
+                                            <span>Change Photo</span>
+                                        </label>
+                                        <input type="file" id="adminProfileImg" accept="image/*" style="display: none;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="adminFullname">
+                                        <i class="fa-solid fa-user"></i> Full Name
+                                    </label>
+                                    <input type="text" id="adminFullname" required placeholder="Enter your full name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="adminEmail">
+                                        <i class="fa-solid fa-envelope"></i> Email Address
+                                    </label>
+                                    <input type="email" id="adminEmail" required placeholder="Enter your email">
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3 class="section-title">
+                                    <i class="fa-solid fa-lock"></i> Change Password
+                                </h3>
+                                <p class="section-description">Leave blank if you don't want to change your password</p>
+
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="adminPassword">
+                                            <i class="fa-solid fa-key"></i> New Password
+                                        </label>
+                                        <div class="password-wrapper">
+                                            <input type="password" id="adminPassword" placeholder="Enter new password">
+                                            <i class="fa-solid fa-eye toggle-password" style="cursor: pointer;"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="adminConfirmPassword">
+                                            <i class="fa-solid fa-key"></i> Confirm Password
+                                        </label>
+                                        <div class="password-wrapper">
+                                            <input type="password" id="adminConfirmPassword"
+                                                placeholder="Confirm new password">
+                                            <i class="fa-solid fa-eye toggle-password" style="cursor: pointer;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3 class="section-title">
+                                    <i class="fa-solid fa-info-circle"></i> Account Information
+                                </h3>
+
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label>Account ID</label>
+                                        <div class="info-display" id="adminId">--</div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Account Status</label>
+                                        <div class="info-display">
+                                            <span class="badge badge-active" id="adminStatus">Active</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn-secondary" id="cancelBtn">
+                                    <i class="fa-solid fa-times"></i> Cancel
+                                </button>
+                                <button type="submit" class="btn-primary" id="saveAdminProfile">
+                                    <i class="fa-solid fa-save"></i> Save Changes
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="../../../storage.js"></script>
+    <script src="../../../script.js"></script>
+    <script src="../../../js/Addmin/AdminDashBoard/Settings.js"></script>
+</body>
+
+</html>

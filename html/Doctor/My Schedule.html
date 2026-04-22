@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard - Online Health System</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../css/Doctor/My Schedule.css">
+    <link rel="stylesheet" href="../../css/Doctor/calendar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-icon-only">
+                    <i class="fa-solid fa-user-doctor"></i>
+                </div>
+            </div>
+
+            <div class="sidebar-nav">
+                <a href="doctor-db.html" class="nav-item" data-tooltip="Dashboard">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span class="item-text">Dashboard</span>
+                </a>
+                <a href="My Schedule.html" class="nav-item active" data-tooltip="My Schedule">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span class="item-text">My Schedule</span>
+                </a>
+                <a href="My Patients.html" class="nav-item" data-tooltip="My Patients">
+                    <i class="fa-solid fa-hospital-user"></i>
+                    <span class="item-text">My Patients</span>
+                </a>
+                <a href="Prescriptions.html" class="nav-item" data-tooltip="Prescriptions">
+                    <i class="fa-solid fa-file-prescription"></i>
+                    <span class="item-text">Prescriptions</span>
+                </a>
+                <a href="working-days.html" class="nav-item" data-tooltip="Working Days">
+                    <i class="fa-solid fa-calendar-week"></i>
+                    <span class="item-text">Working Days</span>
+                </a>
+                <a href="profile.html" class="nav-item" data-tooltip="Profile">
+                    <i class="fa-solid fa-user"></i>
+                    <span class="item-text">Profile</span>
+                </a>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="../Auth/login.html" class="nav-item" data-tooltip="Logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="item-text">Logout</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="nav">
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <button id="sidebarToggle" class="icon-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                </div>
+
+                <div class="top-bar-right">
+                    <button id="themeToggle" class="icon-btn" title="Toggle Theme">
+                        <i class="fa-regular fa-moon"></i>
+                    </button>
+                    <div class="divider-vertical"></div>
+                    <div class="user-profile">
+                        <span class="user-name">Dr. Aziz</span>
+                        <div class="profile-img-container">
+                            <img src="../../images/doctor-profile.png" alt="Profile"
+                                class="profile-img profile-img-blue">
+                            <span class="status-dot-profile"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <main class="main-content">
+                <div class="dashboard-row">
+                    <div class="card" style="flex: 1;">
+                        <div class="card-header"
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <h3 id="timeline-title"><i class="fa-solid fa-calendar-day"></i> Today's Appointments</h3>
+                            <div class="timeline-filters">
+                                <button class="filter-btn active" data-status="all">All</button>
+                                <button class="filter-btn" data-status="confirmed">Confirmed</button>
+                                <button class="filter-btn" data-status="completed">Completed</button>
+                            </div>
+                        </div>
+                        <div class="timeline-container" id="detailed-schedule" style="margin-top: 20px;">
+                            <!-- Appointments will be rendered here by JS -->
+                        </div>
+                    </div>
+
+                    <div class="card" style="flex: 0.4;">
+                        <h3>Calendar View</h3>
+                        <div id="calendar-widget" class="calendar-widget">
+                            <!-- Calendar will be rendered here by JS -->
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../../storage.js"></script>
+    <script src="../../script.js"></script>
+    <script src="../../js/Doctor/My Schedule.js"></script>
+    <script src="../../js/Doctor/calendar.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard - Online Health System</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../css/Doctor/doctor-db.css">
+    <link rel="stylesheet" href="../../css/Doctor/calendar.css">
+    <link rel="stylesheet" href="../../css/Doctor/My Patients.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-icon-only">
+                    <i class="fa-solid fa-user-doctor"></i>
+                </div>
+            </div>
+
+            <div class="sidebar-nav">
+                <a href="doctor-db.html" class="nav-item active" data-tooltip="Dashboard">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span class="item-text">Dashboard</span>
+                </a>
+                <a href="My Schedule.html" class="nav-item" data-tooltip="My Schedule">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span class="item-text">My Schedule</span>
+                </a>
+                <a href="My Patients.html" class="nav-item" data-tooltip="My Patients">
+                    <i class="fa-solid fa-hospital-user"></i>
+                    <span class="item-text">My Patients</span>
+                </a>
+                <a href="Prescriptions.html" class="nav-item" data-tooltip="Prescriptions">
+                    <i class="fa-solid fa-file-prescription"></i>
+                    <span class="item-text">Prescriptions</span>
+                </a>
+                <a href="working-days.html" class="nav-item" data-tooltip="Working Days">
+                    <i class="fa-solid fa-calendar-week"></i>
+                    <span class="item-text">Working Days</span>
+                </a>
+                <a href="profile.html" class="nav-item" data-tooltip="Profile">
+                    <i class="fa-solid fa-user"></i>
+                    <span class="item-text">Profile</span>
+                </a>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="../Auth/login.html" class="nav-item" data-tooltip="Logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="item-text">Logout</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="nav">
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <button id="sidebarToggle" class="icon-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                </div>
+
+                <div class="top-bar-right">
+                    <button id="themeToggle" class="icon-btn" title="Toggle Theme">
+                        <i class="fa-regular fa-moon"></i>
+                    </button>
+                    <div class="divider-vertical"></div>
+                    <div class="user-profile">
+                        <span class="user-name">Dr. Aziz</span>
+                        <div class="profile-img-container">
+                            <img src="../../images/doctor-profile.png" alt="Profile"
+                                class="profile-img profile-img-blue">
+                            <span class="status-dot-profile"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <main class="main-content">
+
+                <div class="dashboard-row">
+
+                    <div class="card welcome-card">
+                        <h2>Welcome, <span id="doctor-name">Dr. Jane Smith</span> 👋</h2>
+                        <p>Here's a quick overview of your day. Focus on what matters most.</p>
+                        <a href="profile.html" class="btn-link">View Profile</a>
+                    </div>
+
+                    <div class="card summary-card">
+                        <h3>Today's Summary</h3>
+
+                        <div class="summary-grid">
+
+                            <div class="stat-item"><i class="fa-solid fa-users"></i> <b id="count-today-patients">0</b>
+                                <p>Patients (Today)</p>
+                            </div>
+
+                            <div class="stat-item"><i class="fa-solid fa-hourglass-half"></i> <b
+                                    id="count-confirmed">0</b>
+                                <p>Confirmed</p>
+                            </div>
+
+                            <div class="stat-item"><i class="fa-solid fa-circle-check"></i> <b
+                                    id="count-completed-today">0</b>
+                                <p>Completed</p>
+                            </div>
+
+                            <div class="stat-item"><i class="fa-solid fa-clock"></i> <b id="next-app-time">--:--</b>
+                                <p>Next App</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Revenue & Earnings Section -->
+                <div class="dashboard-row">
+                    <div class="card revenue-card">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-chart-pie"></i> Revenue Breakdown</h3>
+                            <span class="info-tooltip" title="Based on completed appointments">
+                                <i class="fa-solid fa-info-circle"></i>
+                            </span>
+                        </div>
+                        <div class="revenue-stats">
+                            <div class="revenue-item">
+                                <div class="revenue-icon doctor-share-icon">
+                                    <i class="fa-solid fa-user-doctor"></i>
+                                </div>
+                                <div class="revenue-details">
+                                    <span class="revenue-label">Doctor's Share (80%)</span>
+                                    <span class="revenue-value" id="doctor-earnings">EGP 0</span>
+                                </div>
+                            </div>
+                            <div class="revenue-item">
+                                <div class="revenue-icon hospital-share-icon">
+                                    <i class="fa-solid fa-building"></i>
+                                </div>
+                                <div class="revenue-details">
+                                    <span class="revenue-label">Platform Share (20%)</span>
+                                    <span class="revenue-value" id="hospital-earnings">EGP 0</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="total-revenue">
+                            <span>Total Revenue Generated:</span>
+                            <strong id="total-revenue">EGP 0</strong>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="dashboard-row">
+
+                    <div class="card schedule-card">
+
+                        <div class="card-header">
+                            <h3>Today's Schedule</h3>
+                            <div class="schedule-filters">
+                                <button class="filter-btn active" data-status="all">All</button>
+                                <button class="filter-btn" data-status="confirmed">Confirmed</button>
+                                <button class="filter-btn" data-status="completed">Completed</button>
+                            </div>
+                            <a href="My Schedule.html" class="btn-link">View All</a>
+                        </div>
+                        <div id="schedule-list" class="list-container">
+                        </div>
+                    </div>
+                    <div class="card" style="flex: 0.4;">
+                        <h3>Calendar View</h3>
+                        <div id="calendar-widget" class="calendar-widget">
+                            <!-- Calendar will be rendered here by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-row">
+                    <div class="card table-card">
+                        <h3>My Patients</h3>
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Patient ID</th>
+                                        <th>Full Name</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="patients-list"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card form-card">
+                        <h3>Add New Prescription</h3>
+
+                        <form id="prescription-form">
+                            <div class="form-group">
+                                <label>Patient Name</label>
+                                <select id="patient-select" required></select>
+                            </div>
+
+                            <div id="medications-container">
+                                <div class="medication-item"
+                                    style="border-bottom: 1px dashed var(--border); padding-bottom: 15px; margin-bottom: 15px;">
+                                    <div class="form-group">
+                                        <label>Medication</label>
+                                        <input type="text" class="med-name" placeholder="e.g., Ibuprofen 200mg"
+                                            required>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label>Dosage</label>
+                                            <input type="text" class="dosage" placeholder="1 tablet" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Frequency</label>
+                                            <select class="freq">
+                                                <option>Once daily</option>
+                                                <option>Twice daily</option>
+                                                <option>Three times daily</option>
+                                                <option>Four times daily</option>
+                                                <option>Every 8 hours</option>
+                                                <option>As needed</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="margin-top: 10px;">
+                                        <label>Special Instructions</label>
+                                        <input type="text" class="instructions"
+                                            placeholder="e.g., After meals, avoid driving">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="button" id="add-med-btn" class="btn-link"
+                                style="border: none; background: none; cursor: pointer; margin-bottom: 20px;">
+                                <i class="fa-solid fa-plus-circle"></i> Add Another Medication
+                            </button>
+
+                            <button type="submit" class="submit-btn" style="margin-top: 0;">Issue Full
+                                Prescription</button>
+                        </form>
+
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Patient Details Modal -->
+    <div id="patientModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-user-gear"></i> Patient Profile</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="patientForm">
+                    <div class="profile-header-main">
+                        <img id="detail-img" src="../../images/patient-profile.png" alt="Profile">
+                        <div class="profile-title">
+                            <h2 id="detail-name">Patient Name</h2>
+                            <p id="detail-id">ID: #0000</p>
+                        </div>
+                    </div>
+
+                    <div class="info-grid">
+                        <div class="form-group">
+                            <label>General Information</label>
+                            <div class="info-row">
+                                <i class="fa-solid fa-cake-candles"></i>
+                                <span id="detail-age">Age: --</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Contact Information</label>
+                            <div class="info-row">
+                                <i class="fa-solid fa-phone"></i>
+                                <span id="detail-phone">Phone: --</span>
+                            </div>
+                            <div class="info-row">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span id="detail-email">Email: --</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Medical History</label>
+                        <p id="detail-history" class="history-box">No records found.</p>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Last Medical Record</label>
+                        <div id="last-record-box" class="record-box">
+                            <strong id="last-record-date">Date: --</strong>
+                            <p id="last-record-diagnosis">No previous records.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-actions">
+                        <a id="call-link" href="#" class="btn btn-call"><i class="fa-solid fa-phone-volume"></i> Call
+                            Patient</a>
+                        <a id="whatsapp-link" href="#" target="_blank" class="btn btn-whatsapp"><i
+                                class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../../storage.js"></script>
+    <script src="../../script.js"></script>
+    <script src="../../js/Doctor/doctor-db.js"></script>
+    <script src="../../js/Doctor/calendar.js"></script>
+</body>
+
+</html>

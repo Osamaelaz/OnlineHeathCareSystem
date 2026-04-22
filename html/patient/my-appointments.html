@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Appointments - Online Health System</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../css/patient/my-appointments-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-icon-only">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+            </div>
+
+            <div class="sidebar-nav">
+                <a href="patient.html" class="nav-item" data-tooltip="Dashboard">
+                    <i class="fa-solid fa-house-medical"></i>
+                    <span class="item-text">Dashboard</span>
+                </a>
+                <a href="book-appointment.html" class="nav-item" data-tooltip="Book Appointment">
+                    <i class="fa-solid fa-calendar-plus"></i>
+                    <span class="item-text">Book Appointment</span>
+                </a>
+                <a href="my-appointments.html" class="nav-item active" data-tooltip="My Appointments">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span class="item-text">My Appointments</span>
+                </a>
+                <a href="medical-records.html" class="nav-item" data-tooltip="Medical Records">
+                    <i class="fa-solid fa-file-medical"></i>
+                    <span class="item-text">Medical Records</span>
+                </a>
+                <a href="profile.html" class="nav-item" data-tooltip="Profile">
+                    <i class="fa-solid fa-user"></i>
+                    <span class="item-text">Profile</span>
+                </a>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="#" class="nav-item" data-tooltip="Logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="item-text">Logout</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="nav">
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <button id="sidebarToggle" class="icon-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+                <div class="top-bar-right">
+                    <button id="themeToggle" class="icon-btn" title="Toggle Theme">
+                        <i class="fa-regular fa-moon"></i>
+                    </button>
+                    <div class="divider-vertical"></div>
+                    <div class="user-profile">
+                        <span class="user-name">Aziz</span>
+                        <div class="profile-img-container">
+                            <img src="../../images/patient-profile.png" alt="Profile"
+                                class="profile-img profile-img-blue">
+                            <span class="status-dot-profile"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- My Appointments Content -->
+            <div class="main-content">
+                <div class="page-header">
+                    <div>
+                        <h1><i class="fa-solid fa-calendar-days"></i> My Appointments</h1>
+                        <p>Manage and view all your appointments</p>
+                    </div>
+                    <button class="btn-primary" onclick="window.location.href='book-appointment.html'">
+                        <i class="fa-solid fa-plus"></i> Book New Appointment
+                    </button>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="filter-tabs">
+                    <button class="tab-btn active" data-filter="all">All Appointments</button>
+                    <button class="tab-btn" data-filter="upcoming">Upcoming</button>
+                    <button class="tab-btn" data-filter="completed">Completed</button>
+                    <button class="tab-btn" data-filter="cancelled">Cancelled</button>
+                </div>
+
+                <!-- Appointments List -->
+                <div class="appointments-container">
+                    <!-- Upcoming Appointment 1 -->
+                    <div class="appointment-item upcoming">
+                        <div class="appointment-date-badge">
+                            <div class="day">30</div>
+                            <div class="month">DEC</div>
+                        </div>
+                        <div class="appointment-details">
+                            <div class="appointment-main-info">
+                                <h3>Cardiology Consultation</h3>
+                                <div class="appointment-meta">
+                                    <span class="meta-item">
+                                        <i class="fa-solid fa-user-doctor"></i>
+                                        Dr. Emily White
+                                    </span>
+                                    <span class="meta-item">
+                                        <i class="fa-solid fa-clock"></i>
+                                        10:00 AM - 10:30 AM
+                                    </span>
+                                    <span class="meta-item">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Cardiology Department, Room 302
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="appointment-status">
+                                <span class="status-badge confirmed">Confirmed</span>
+                            </div>
+                        </div>
+                        <div class="appointment-actions">
+                            <button class="action-btn view-btn">
+                                <i class="fa-solid fa-eye"></i> View
+                            </button>
+                            <button class="action-btn reschedule-btn">
+                                <i class="fa-solid fa-calendar-days"></i> Reschedule
+                            </button>
+                            <button class="action-btn cancel-btn">
+                                <i class="fa-solid fa-times"></i> Cancel
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Appointment 2 -->
+                    <div class="appointment-item upcoming">
+                        <div class="appointment-date-badge">
+                            <div class="day">02</div>
+                            <div class="month">JAN</div>
+                        </div>
+                        <div class="appointment-details">
+                            <div class="appointment-main-info">
+                                <h3>Pediatrics Checkup</h3>
+                                <div class="appointment-meta">
+                                    <span class="meta-item">
+                                        <i class="fa-solid fa-user-doctor"></i>
+                                        Dr. Michael Lee
+                                    </span>
+                                    <span class="meta-item">
+                                        <i class="fa-solid fa-clock"></i>
+                                        02:30 PM - 03:00 PM
+                                    </span>
+                                    <span class="meta-item">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Pediatrics Wing, Room 105
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="appointment-status">
+                                <span class="status-badge confirmed">Confirmed</span>
+                            </div>
+                        </div>
+                        <div class="appointment-actions">
+                            <button class="action-btn view-btn">
+                                <i class="fa-solid fa-eye"></i> View
+                            </button>
+                            <button class="action-btn reschedule-btn">
+                                <i class="fa-solid fa-calendar-days"></i> Reschedule
+                            </button>
+                            <button class="action-btn cancel-btn">
+                                <i class="fa-solid fa-times"></i> Cancel
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Pending Appointment -->
+                    <div class="appointment-item pending">
+                        <div class="appointment-date-badge">
+                            <div class="day">05</div>
+                            <div class="month">JAN</div>
+                        </div>
+                        <div class="appointment-details">
+                            <div class="appointment-main-info">
+                                <h3>Dermatology Consultation</h3>
+                                <div class="appointment-meta">
+                                    <span class="meta-item">
+                                        <i class="fa-solid fa-user-doctor"></i>
+                                        Dr. Jessica Kim
+                                    </span>
+                                    <span class="meta-item">
+                                        <i class="fa-solid fa-clock"></i>
+                                        11:00 AM - 11:30 AM
+                                    </span>
+                                    <span class="meta-item">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Dermatology Clinic, Room 210
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="appointment-status">
+                                <span class="status-badge pending">Pending</span>
+                            </div>
+                        </div>
+                        <div class="appointment-actions">
+                            <button class="action-btn view-btn">
+                                <i class="fa-solid fa-eye"></i> View
+                            </button>
+                            <button class="action-btn cancel-btn">
+                                <i class="fa-solid fa-times"></i> Cancel
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Completed Appointment -->
+                    <div class="appointment-item completed">
+                        <div class="appointment-date-badge">
+                            <div class="day">15</div>
+                            <div class="month">DEC</div>
+                        </div>
+                        <div class="appointment-details">
+                            <div class="appointment-main-info">
+                                <h3>General Checkup</h3>
+                                <div class="appointment-meta">
+                                    <span class="meta-item">
+                                        <i class="fa-solid fa-user-doctor"></i>
+                                        Dr. Sarah Chen
+                                    </span>
+                                    <span class="meta-item">
+                                        <i class="fa-solid fa-clock"></i>
+                                        09:00 AM - 09:30 AM
+                                    </span>
+                                    <span class="meta-item">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        General Medicine, Room 101
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="appointment-status">
+                                <span class="status-badge completed">Completed</span>
+                            </div>
+                        </div>
+                        <div class="appointment-actions">
+                            <button class="action-btn view-btn">
+                                <i class="fa-solid fa-eye"></i> View Details
+                            </button>
+                            <button class="action-btn download-btn">
+                                <i class="fa-solid fa-download"></i> Download Report
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Cancelled Appointment -->
+                    <div class="appointment-item cancelled">
+                        <div class="appointment-date-badge">
+                            <div class="day">10</div>
+                            <div class="month">DEC</div>
+                        </div>
+                        <div class="appointment-details">
+                            <div class="appointment-main-info">
+                                <h3>Orthopedics Consultation</h3>
+                                <div class="appointment-meta">
+                                    <span class="meta-item">
+                                        <i class="fa-solid fa-user-doctor"></i>
+                                        Dr. Robert Johnson
+                                    </span>
+                                    <span class="meta-item">
+                                        <i class="fa-solid fa-clock"></i>
+                                        03:00 PM - 03:30 PM
+                                    </span>
+                                    <span class="meta-item">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Orthopedics Department, Room 405
+                                    </span>
+                                </div>
+                                <div class="cancellation-note">
+                                    <i class="fa-solid fa-info-circle"></i>
+                                    <span>Cancelled by patient on Dec 9, 2024</span>
+                                </div>
+                            </div>
+                            <div class="appointment-status">
+                                <span class="status-badge cancelled">Cancelled</span>
+                            </div>
+                        </div>
+                        <div class="appointment-actions">
+                            <button class="action-btn view-btn">
+                                <i class="fa-solid fa-eye"></i> View Details
+                            </button>
+                            <button class="action-btn rebook-btn">
+                                <i class="fa-solid fa-rotate-right"></i> Rebook
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Completed Appointment 2 -->
+                    <div class="appointment-item completed">
+                        <div class="appointment-date-badge">
+                            <div class="day">28</div>
+                            <div class="month">NOV</div>
+                        </div>
+                        <div class="appointment-details">
+                            <div class="appointment-main-info">
+                                <h3>Blood Test Follow-up</h3>
+                                <div class="appointment-meta">
+                                    <span class="meta-item">
+                                        <i class="fa-solid fa-user-doctor"></i>
+                                        Dr. Emily White
+                                    </span>
+                                    <span class="meta-item">
+                                        <i class="fa-solid fa-clock"></i>
+                                        10:30 AM - 11:00 AM
+                                    </span>
+                                    <span class="meta-item">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Laboratory, Room 150
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="appointment-status">
+                                <span class="status-badge completed">Completed</span>
+                            </div>
+                        </div>
+                        <div class="appointment-actions">
+                            <button class="action-btn view-btn">
+                                <i class="fa-solid fa-eye"></i> View Details
+                            </button>
+                            <button class="action-btn download-btn">
+                                <i class="fa-solid fa-download"></i> Download Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Appointment Details Modal -->
+    <div id="appointmentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-calendar-check"></i> Appointment Details</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="detail-list">
+                    <div class="detail-row">
+                        <i class="fa-solid fa-calendar-alt icon"></i>
+                        <strong>Date:</strong>
+                        <span id="modalDate">Tuesday, January 13, 2026</span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fa-solid fa-clock icon"></i>
+                        <strong>Time:</strong>
+                        <span id="modalTime">9:00 AM</span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fa-solid fa-user-doctor icon"></i>
+                        <strong>Doctor:</strong>
+                        <span id="modalDoctor">Dr. Hazem Ali</span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fa-solid fa-stethoscope icon"></i>
+                        <strong>Specialty:</strong>
+                        <span id="modalSpecialty">Pediatrics</span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fa-solid fa-notes-medical icon"></i>
+                        <strong>Reason:</strong>
+                        <span id="modalReason">General consultation</span>
+                    </div>
+                    <div class="detail-row">
+                        <i class="fa-solid fa-circle-info icon"></i>
+                        <strong>Status:</strong>
+                        <span id="modalStatus" class="status-badge">Confirmed</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-close close-modal">
+                    <i class="fa-solid fa-times"></i> Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../../storage.js"></script>
+    <script src="../../script.js"></script>
+    <script src="../../js/patient/my-appointments.js"></script>
+</body>
+
+</html>

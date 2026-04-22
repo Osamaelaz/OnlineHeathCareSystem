@@ -1,0 +1,10 @@
+{
+    "name": "healthcare-project-api",
+    "version": "1.0.0",
+    "scripts": {
+        "start-api": "json-server --watch DB/dummy-data.json --port 3000"
+    },
+    "dependencies": {
+        "json-server": "^0.17.4"
+    }
+}

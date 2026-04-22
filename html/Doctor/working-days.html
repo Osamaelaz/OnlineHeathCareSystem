@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Days - Online Health System</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../css/Doctor/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-icon-only">
+                    <i class="fa-solid fa-user-doctor"></i>
+                </div>
+            </div>
+
+            <div class="sidebar-nav">
+                <a href="doctor-db.html" class="nav-item" data-tooltip="Dashboard">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span class="item-text">Dashboard</span>
+                </a>
+                <a href="My Schedule.html" class="nav-item" data-tooltip="My Schedule">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span class="item-text">My Schedule</span>
+                </a>
+                <a href="My Patients.html" class="nav-item" data-tooltip="My Patients">
+                    <i class="fa-solid fa-hospital-user"></i>
+                    <span class="item-text">My Patients</span>
+                </a>
+                <a href="Prescriptions.html" class="nav-item" data-tooltip="Prescriptions">
+                    <i class="fa-solid fa-file-prescription"></i>
+                    <span class="item-text">Prescriptions</span>
+                </a>
+                <a href="working-days.html" class="nav-item active" data-tooltip="Working Days">
+                    <i class="fa-solid fa-calendar-week"></i>
+                    <span class="item-text">Working Days</span>
+                </a>
+                <a href="profile.html" class="nav-item" data-tooltip="Profile">
+                    <i class="fa-solid fa-user"></i>
+                    <span class="item-text">Profile</span>
+                </a>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="../Auth/login.html" class="nav-item" data-tooltip="Logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="item-text">Logout</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="nav">
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <button id="sidebarToggle" class="icon-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                </div>
+
+                <div class="top-bar-right">
+                    <button id="themeToggle" class="icon-btn" title="Toggle Theme">
+                        <i class="fa-regular fa-moon"></i>
+                    </button>
+                    <div class="divider-vertical"></div>
+                    <div class="user-profile">
+                        <span class="user-name">Dr. Aziz</span>
+                        <div class="profile-img-container">
+                            <img src="../../images/doctor-profile.png" alt="Profile"
+                                class="profile-img profile-img-blue">
+                            <span class="status-dot-profile"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <main class="main-content">
+                <div class="dashboard-row">
+                    <div class="card settings-card" style="flex: 1; max-width: 800px; margin: 0 auto;">
+                        <h3><i class="fa-solid fa-calendar-week"></i> Working Days & Hours</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 30px;">Set your availability for patient
+                            appointments</p>
+
+                        <form id="workingDaysForm">
+                            <div class="form-group">
+                                <label>Select Working Days</label>
+                                <div class="days-selector"
+                                    style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
+                                    <label class="day-item"
+                                        style="flex: 0 0 calc(14.28% - 10px); text-align: center; padding: 12px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; transition: all 0.3s;">
+                                        <input type="checkbox" value="Sunday" style="display: none;">
+                                        <span style="display: block; font-weight: 600;">Sun</span>
+                                    </label>
+                                    <label class="day-item"
+                                        style="flex: 0 0 calc(14.28% - 10px); text-align: center; padding: 12px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; transition: all 0.3s;">
+                                        <input type="checkbox" value="Monday" style="display: none;">
+                                        <span style="display: block; font-weight: 600;">Mon</span>
+                                    </label>
+                                    <label class="day-item"
+                                        style="flex: 0 0 calc(14.28% - 10px); text-align: center; padding: 12px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; transition: all 0.3s;">
+                                        <input type="checkbox" value="Tuesday" style="display: none;">
+                                        <span style="display: block; font-weight: 600;">Tue</span>
+                                    </label>
+                                    <label class="day-item"
+                                        style="flex: 0 0 calc(14.28% - 10px); text-align: center; padding: 12px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; transition: all 0.3s;">
+                                        <input type="checkbox" value="Wednesday" style="display: none;">
+                                        <span style="display: block; font-weight: 600;">Wed</span>
+                                    </label>
+                                    <label class="day-item"
+                                        style="flex: 0 0 calc(14.28% - 10px); text-align: center; padding: 12px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; transition: all 0.3s;">
+                                        <input type="checkbox" value="Thursday" style="display: none;">
+                                        <span style="display: block; font-weight: 600;">Thu</span>
+                                    </label>
+                                    <label class="day-item"
+                                        style="flex: 0 0 calc(14.28% - 10px); text-align: center; padding: 12px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; transition: all 0.3s;">
+                                        <input type="checkbox" value="Friday" style="display: none;">
+                                        <span style="display: block; font-weight: 600;">Fri</span>
+                                    </label>
+                                    <label class="day-item"
+                                        style="flex: 0 0 calc(14.28% - 10px); text-align: center; padding: 12px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; transition: all 0.3s;">
+                                        <input type="checkbox" value="Saturday" style="display: none;">
+                                        <span style="display: block; font-weight: 600;">Sat</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group" style="margin-top: 30px;">
+                                <label>Daily Working Hours</label>
+                                <div class="time-range-picker"
+                                    style="display: flex; align-items: center; gap: 15px; margin-top: 10px;">
+                                    <input type="time" id="work-start"
+                                        style="flex: 1; padding: 12px; border: 2px solid var(--border); border-radius: 8px; font-size: 16px;">
+                                    <span style="font-weight: 600; color: var(--text-muted);">to</span>
+                                    <input type="time" id="work-end"
+                                        style="flex: 1; padding: 12px; border: 2px solid var(--border); border-radius: 8px; font-size: 16px;">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="submit-btn" style="width: 200px; margin-top: 30px;">Save
+                                Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../../storage.js"></script>
+    <script src="../../script.js"></script>
+    <script src="../../js/Doctor/working-days.js"></script>
+</body>
+
+</html>

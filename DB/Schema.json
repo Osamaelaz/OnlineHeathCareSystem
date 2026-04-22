@@ -1,0 +1,136 @@
+{
+    "users": [
+        {
+            "id": "ADM001",
+            "email": "admin@healthcare.com",
+            "password": "Password123!",
+            "role": "admin",
+            "fullname": "Ahmed Hassan",
+            "status": "active",
+            "profileImg": "/images/admin-profile.png",
+            "createdAt": "2025-01-15T08:00:00Z",
+            "updatedAt": "2026-01-04T07:00:00Z"
+        },
+        {
+            "id": "5h6fLvX",
+            "fullname": "hazem",
+            "email": "h@gmail.com",
+            "phone": "01060502411",
+            "password": "123456@Ha",
+            "role": "doctor",
+            "profileImg": "data:image/jpeg;base64,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",
+            "specialty": "Pediatrics",
+            "experience": 5,
+            "appointmentPrice": 200,
+            "salary": 0,
+            "status": "active",
+            "workingHours": {
+                "days": [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Saturday"
+                ],
+                "start": "09:00",
+                "end": "17:00"
+            },
+            "createdAt": "2025-02-10T09:15:00Z",
+            "updatedAt": "2026-01-04T07:00:00Z"
+        },
+        {
+            "id": "0180",
+            "fullname": "Aziz",
+            "email": "aziz@gmail.com",
+            "password": "Password123!",
+            "role": "patient",
+            "phone": "01124833532",
+            "dateOfBirth": "2003-11-12",
+            "gender": "Male",
+            "status": "active",
+            "profileImg": "/images/patient-profile.png",
+            "medicalHistory": [],
+            "balance": 1000,
+            "createdAt": "2025-12-30T05:36:36Z",
+            "updatedAt": "2025-12-30T05:36:36Z"
+        }
+    ],
+    "appointments": [
+        {
+            "id": "APP001",
+            "patientId": "0180",
+            "doctorId": "5h6fLvX",
+            "dateTime": "2026-01-06T09:00:00Z",
+            "time": "09:00 AM",
+            "reason": "General consultation",
+            "status": "confirmed",
+            "basePrice": 200,
+            "urgencyFee": 0,
+            "paidAmount": 200,
+            "pricingType": "normal",
+            "createdAt": "2026-01-04T12:00:00Z",
+            "updatedAt": "2026-01-04T08:50:04Z"
+        }
+    ],
+    "medical_records": [
+        {
+            "id": "REC20260103001",
+            "patientId": "0180",
+            "doctorId": "5h6fLvX",
+            "appointmentId": "APP001",
+            "date": "2026-01-03",
+            "diagnosis": "Mild hypertension",
+            "notes": "Patient shows signs of elevated blood pressure. Prescribed medication and lifestyle changes.",
+            "medication": "Aspirin 500mg",
+            "dosage": "1 tablet",
+            "frequency": "Twice daily",
+            "instructions": "Take with food, preferably after meals",
+            "createdAt": "2026-01-03T10:00:00Z",
+            "updatedAt": "2026-01-03T10:00:00Z"
+        }
+    ],
+    "prescriptions": [
+        {
+            "id": "PRES001",
+            "patientId": "0180",
+            "doctorId": "5h6fLvX",
+            "appointmentId": "APP001",
+            "medication": "Aspirin 500mg",
+            "dosage": "1 tablet",
+            "frequency": "Twice daily",
+            "instructions": "Take with food, preferably after meals",
+            "date": "2026-01-03T10:00:00Z",
+            "createdAt": "2026-01-03T10:00:00Z",
+            "updatedAt": "2026-01-03T10:00:00Z"
+        }
+    ],
+    "visa_cards": [
+        {
+            "id": "visa_1",
+            "userId": "0180",
+            "cardNumber": "4532015112830366",
+            "cardHolder": "Aziz",
+            "expiryDate": "12/26",
+            "cvv": "123",
+            "balance": 775
+        }
+    ],
+    "doctor_applications": [
+        {
+            "id": "DOC_APP_001",
+            "fullname": "Dr. Fatima Hassan",
+            "email": "fatima.hassan@example.com",
+            "phone": "01156789012",
+            "password": "Password123!",
+            "role": "doctor",
+            "profileImg": "/images/doctor-profile.png",
+            "specialty": "Dermatology",
+            "experience": 7,
+            "appointmentPrice": 250,
+            "salary": 0,
+            "status": "pending",
+            "createdAt": "2026-01-05T08:00:00Z",
+            "updatedAt": "2026-01-05T08:00:00Z"
+        }
+    ]
+}

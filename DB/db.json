@@ -1,0 +1,534 @@
+{
+  "users": [
+    {
+      "id": "5h6fLvX",
+      "fullname": "Dr. Hazem Ibrahim",
+      "email": "h@gmail.com",
+      "phone": "01060502411",
+      "password": "123456@Ha",
+      "role": "doctor",
+      "status": "active",
+      "profileImg": "images/doctor-profile.png",
+      "specialty": "Pediatrics",
+      "createdAt": "2025-02-10T09:15:00Z",
+      "workingHours": {
+        "days": [
+          "Sunday",
+          "Monday",
+          "Tuesday"
+        ],
+        "start": "07:49",
+        "end": "07:49"
+      },
+      "appointmentPrice": 250
+    },
+    {
+      "id": 1,
+      "email": "admin@healthcare.com",
+      "password": "Admin@123",
+      "role": "admin",
+      "fullname": "Admin User",
+      "phone": "+1234567890",
+      "profileImg": "images/admin-profile.png",
+      "status": "active",
+      "createdAt": "2024-01-01T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "email": "dr.ahmed@healthcare.com",
+      "password": "Doctor@123",
+      "role": "doctor",
+      "fullname": "Dr. Ahmed Hassan",
+      "phone": "+1234567891",
+      "profileImg": "images/doctor-profile.png",
+      "specialty": "Cardiology",
+      "licenseNumber": "MD123456",
+      "yearsOfExperience": 10,
+      "approved": true,
+      "status": "active",
+      "bio": "Experienced cardiologist specializing in heart disease prevention and treatment.",
+      "education": "MD from Cairo University, Fellowship in Cardiology",
+      "consultationFee": 500,
+      "rating": 4.8,
+      "createdAt": "2024-01-02T10:00:00Z"
+    },
+    {
+      "id": 3,
+      "email": "dr.sara@healthcare.com",
+      "password": "Doctor@123",
+      "role": "doctor",
+      "fullname": "Dr. Sara Mohamed",
+      "phone": "+1234567892",
+      "profileImg": "images/doctor-profile.png",
+      "specialty": "Pediatrics",
+      "licenseNumber": "MD123457",
+      "yearsOfExperience": 8,
+      "approved": true,
+      "status": "active",
+      "bio": "Dedicated pediatrician with expertise in child health and development.",
+      "education": "MD from Alexandria University",
+      "consultationFee": 400,
+      "rating": 4.9,
+      "createdAt": "2024-01-03T10:00:00Z"
+    },
+    {
+      "id": 4,
+      "email": "dr.mohamed@healthcare.com",
+      "password": "Doctor@123",
+      "role": "doctor",
+      "fullname": "Dr. Mohamed Ali",
+      "phone": "+1234567893",
+      "profileImg": "images/doctor-profile.png",
+      "specialty": "Orthopedics",
+      "licenseNumber": "MD123458",
+      "yearsOfExperience": 12,
+      "approved": true,
+      "status": "active",
+      "bio": "Orthopedic surgeon specializing in sports injuries and joint replacement.",
+      "education": "MD from Ain Shams University",
+      "consultationFee": 600,
+      "rating": 4.7,
+      "createdAt": "2024-01-04T10:00:00Z"
+    },
+    {
+      "id": 5,
+      "email": "dr.fatma@healthcare.com",
+      "password": "Doctor@123",
+      "role": "doctor",
+      "fullname": "Dr. Fatma Ibrahim",
+      "phone": "+1234567894",
+      "profileImg": "images/doctor-profile.png",
+      "specialty": "Dermatology",
+      "licenseNumber": "MD123459",
+      "yearsOfExperience": 6,
+      "approved": false,
+      "status": "pending",
+      "bio": "Dermatologist focusing on skin health and cosmetic procedures.",
+      "education": "MD from Mansoura University",
+      "consultationFee": 450,
+      "rating": 4.6,
+      "createdAt": "2024-01-05T10:00:00Z"
+    },
+    {
+      "id": 6,
+      "email": "patient1@gmail.com",
+      "password": "Patient@123",
+      "role": "patient",
+      "fullname": "Omar Khaled",
+      "phone": "+1234567895",
+      "profileImg": "images/patient-profile.png",
+      "dateOfBirth": "1990-05-15",
+      "gender": "male",
+      "bloodType": "A+",
+      "status": "active",
+      "address": "123 Main Street, Cairo, Egypt",
+      "emergencyContact": "+1234567896",
+      "createdAt": "2024-01-06T10:00:00Z"
+    },
+    {
+      "id": 7,
+      "email": "patient2@gmail.com",
+      "password": "Patient@123",
+      "role": "patient",
+      "fullname": "Layla Ahmed",
+      "phone": "+1234567897",
+      "profileImg": "images/patient-profile.png",
+      "dateOfBirth": "1985-08-22",
+      "gender": "female",
+      "bloodType": "O+",
+      "status": "active",
+      "address": "456 Nile Street, Giza, Egypt",
+      "emergencyContact": "+1234567898",
+      "createdAt": "2024-01-07T10:00:00Z"
+    },
+    {
+      "id": 8,
+      "email": "patient3@gmail.com",
+      "password": "Patient@123",
+      "role": "patient",
+      "fullname": "Youssef Hassan",
+      "phone": "+1234567899",
+      "profileImg": "images/patient-profile.png",
+      "dateOfBirth": "1995-03-10",
+      "gender": "male",
+      "bloodType": "B+",
+      "status": "active",
+      "address": "789 Tahrir Square, Cairo, Egypt",
+      "emergencyContact": "+1234567800",
+      "createdAt": "2024-01-08T10:00:00Z"
+    }
+  ],
+  "appointments": [
+    {
+      "id": 1,
+      "patientId": 6,
+      "doctorId": 2,
+      "date": "2026-01-15",
+      "time": "10:00",
+      "status": "confirmed",
+      "reason": "Regular checkup",
+      "notes": "Patient has been experiencing chest pain",
+      "createdAt": "2026-01-10T09:00:00Z"
+    },
+    {
+      "id": 2,
+      "patientId": 6,
+      "doctorId": 3,
+      "date": "2026-01-20",
+      "time": "14:00",
+      "status": "pending",
+      "reason": "Follow-up consultation",
+      "notes": "",
+      "createdAt": "2026-01-11T10:00:00Z"
+    },
+    {
+      "id": 3,
+      "patientId": 7,
+      "doctorId": 2,
+      "date": "2026-01-16",
+      "time": "11:00",
+      "status": "confirmed",
+      "reason": "Cardiac evaluation",
+      "notes": "Patient history of high blood pressure",
+      "createdAt": "2026-01-09T11:00:00Z"
+    },
+    {
+      "id": 4,
+      "patientId": 7,
+      "doctorId": 4,
+      "date": "2026-01-18",
+      "time": "15:00",
+      "status": "pending",
+      "reason": "Knee pain",
+      "notes": "Patient injured during sports",
+      "createdAt": "2026-01-12T12:00:00Z"
+    },
+    {
+      "id": 5,
+      "patientId": 8,
+      "doctorId": 3,
+      "date": "2026-01-17",
+      "time": "09:00",
+      "status": "confirmed",
+      "reason": "Child vaccination",
+      "notes": "",
+      "createdAt": "2026-01-08T13:00:00Z"
+    },
+    {
+      "id": 6,
+      "patientId": 8,
+      "doctorId": 2,
+      "date": "2026-01-25",
+      "time": "16:00",
+      "status": "cancelled",
+      "reason": "General consultation",
+      "notes": "Patient cancelled due to travel",
+      "createdAt": "2026-01-10T14:00:00Z"
+    },
+    {
+      "id": 7,
+      "patientId": 6,
+      "doctorId": 4,
+      "date": "2026-01-22",
+      "time": "10:30",
+      "status": "completed",
+      "reason": "Back pain assessment",
+      "notes": "Treatment plan created",
+      "createdAt": "2026-01-05T15:00:00Z"
+    }
+  ],
+  "prescriptions": [
+    {
+      "id": 1,
+      "appointmentId": 1,
+      "patientId": 6,
+      "doctorId": 2,
+      "date": "2026-01-15",
+      "medications": [
+        {
+          "name": "Aspirin",
+          "dosage": "75mg",
+          "frequency": "Once daily",
+          "duration": "30 days",
+          "instructions": "Take with food"
+        },
+        {
+          "name": "Metoprolol",
+          "dosage": "50mg",
+          "frequency": "Twice daily",
+          "duration": "30 days",
+          "instructions": "Take in morning and evening"
+        }
+      ],
+      "diagnosis": "Mild hypertension",
+      "notes": "Patient should monitor blood pressure daily",
+      "createdAt": "2026-01-15T11:00:00Z"
+    },
+    {
+      "id": 2,
+      "appointmentId": 3,
+      "patientId": 7,
+      "doctorId": 2,
+      "date": "2026-01-16",
+      "medications": [
+        {
+          "name": "Lisinopril",
+          "dosage": "10mg",
+          "frequency": "Once daily",
+          "duration": "60 days",
+          "instructions": "Take in the morning"
+        }
+      ],
+      "diagnosis": "Hypertension",
+      "notes": "Follow-up in 2 months",
+      "createdAt": "2026-01-16T12:00:00Z"
+    },
+    {
+      "id": 3,
+      "appointmentId": 5,
+      "patientId": 8,
+      "doctorId": 3,
+      "date": "2026-01-17",
+      "medications": [
+        {
+          "name": "Paracetamol",
+          "dosage": "250mg",
+          "frequency": "Every 6 hours if needed",
+          "duration": "7 days",
+          "instructions": "For fever or pain relief"
+        }
+      ],
+      "diagnosis": "Post-vaccination care",
+      "notes": "Normal reaction to vaccination",
+      "createdAt": "2026-01-17T10:00:00Z"
+    }
+  ],
+  "medicalRecords": [
+    {
+      "id": 1,
+      "patientId": 6,
+      "doctorId": 2,
+      "appointmentId": 1,
+      "date": "2026-01-15",
+      "diagnosis": "Mild hypertension",
+      "symptoms": "Chest pain, elevated blood pressure",
+      "treatment": "Medication prescribed, lifestyle changes recommended",
+      "vitalSigns": {
+        "bloodPressure": "140/90",
+        "heartRate": "78",
+        "temperature": "37.2",
+        "weight": "82",
+        "height": "175"
+      },
+      "labResults": "Cholesterol: 220 mg/dL, Blood glucose: 95 mg/dL",
+      "notes": "Patient advised to reduce salt intake and exercise regularly",
+      "createdAt": "2026-01-15T11:30:00Z"
+    },
+    {
+      "id": 2,
+      "patientId": 7,
+      "doctorId": 2,
+      "appointmentId": 3,
+      "date": "2026-01-16",
+      "diagnosis": "Hypertension",
+      "symptoms": "High blood pressure, occasional headaches",
+      "treatment": "Medication prescribed",
+      "vitalSigns": {
+        "bloodPressure": "150/95",
+        "heartRate": "82",
+        "temperature": "37.0",
+        "weight": "75",
+        "height": "165"
+      },
+      "labResults": "Normal kidney function",
+      "notes": "Regular monitoring required",
+      "createdAt": "2026-01-16T12:30:00Z"
+    },
+    {
+      "id": 3,
+      "patientId": 8,
+      "doctorId": 3,
+      "appointmentId": 5,
+      "date": "2026-01-17",
+      "diagnosis": "Routine vaccination",
+      "symptoms": "None",
+      "treatment": "MMR vaccine administered",
+      "vitalSigns": {
+        "bloodPressure": "110/70",
+        "heartRate": "90",
+        "temperature": "36.8",
+        "weight": "25",
+        "height": "120"
+      },
+      "labResults": "N/A",
+      "notes": "Child is healthy, next vaccination in 6 months",
+      "createdAt": "2026-01-17T10:30:00Z"
+    }
+  ],
+  "doctorSchedule": [
+    {
+      "id": 1,
+      "doctorId": 2,
+      "dayOfWeek": "Monday",
+      "startTime": "09:00",
+      "endTime": "17:00",
+      "available": true
+    },
+    {
+      "id": 2,
+      "doctorId": 2,
+      "dayOfWeek": "Tuesday",
+      "startTime": "09:00",
+      "endTime": "17:00",
+      "available": true
+    },
+    {
+      "id": 3,
+      "doctorId": 2,
+      "dayOfWeek": "Wednesday",
+      "startTime": "09:00",
+      "endTime": "17:00",
+      "available": true
+    },
+    {
+      "id": 4,
+      "doctorId": 2,
+      "dayOfWeek": "Thursday",
+      "startTime": "09:00",
+      "endTime": "17:00",
+      "available": true
+    },
+    {
+      "id": 5,
+      "doctorId": 2,
+      "dayOfWeek": "Friday",
+      "startTime": "09:00",
+      "endTime": "14:00",
+      "available": true
+    },
+    {
+      "id": 6,
+      "doctorId": 3,
+      "dayOfWeek": "Monday",
+      "startTime": "08:00",
+      "endTime": "16:00",
+      "available": true
+    },
+    {
+      "id": 7,
+      "doctorId": 3,
+      "dayOfWeek": "Tuesday",
+      "startTime": "08:00",
+      "endTime": "16:00",
+      "available": true
+    },
+    {
+      "id": 8,
+      "doctorId": 3,
+      "dayOfWeek": "Wednesday",
+      "startTime": "08:00",
+      "endTime": "16:00",
+      "available": true
+    },
+    {
+      "id": 9,
+      "doctorId": 3,
+      "dayOfWeek": "Thursday",
+      "startTime": "08:00",
+      "endTime": "16:00",
+      "available": true
+    },
+    {
+      "id": 10,
+      "doctorId": 4,
+      "dayOfWeek": "Monday",
+      "startTime": "10:00",
+      "endTime": "18:00",
+      "available": true
+    },
+    {
+      "id": 11,
+      "doctorId": 4,
+      "dayOfWeek": "Wednesday",
+      "startTime": "10:00",
+      "endTime": "18:00",
+      "available": true
+    },
+    {
+      "id": 12,
+      "doctorId": 4,
+      "dayOfWeek": "Friday",
+      "startTime": "10:00",
+      "endTime": "15:00",
+      "available": true
+    }
+  ],
+  "notifications": [
+    {
+      "id": 1,
+      "userId": 6,
+      "type": "appointment",
+      "title": "Appointment Confirmed",
+      "message": "Your appointment with Dr. Ahmed Hassan has been confirmed for Jan 15, 2026 at 10:00 AM",
+      "read": false,
+      "createdAt": "2026-01-10T09:30:00Z"
+    },
+    {
+      "id": 2,
+      "userId": 6,
+      "type": "prescription",
+      "title": "New Prescription",
+      "message": "Dr. Ahmed Hassan has issued a new prescription for you",
+      "read": false,
+      "createdAt": "2026-01-15T11:00:00Z"
+    },
+    {
+      "id": 3,
+      "userId": 7,
+      "type": "appointment",
+      "title": "Appointment Reminder",
+      "message": "Reminder: You have an appointment tomorrow with Dr. Ahmed Hassan at 11:00 AM",
+      "read": true,
+      "createdAt": "2026-01-15T10:00:00Z"
+    }
+  ],
+  "systemSettings": {
+    "siteName": "HealthCare System",
+    "maintenanceMode": false,
+    "allowRegistration": true,
+    "requireEmailVerification": false,
+    "appointmentSlotDuration": 30,
+    "maxAppointmentsPerDay": 12,
+    "workingHoursStart": "08:00",
+    "workingHoursEnd": "18:00",
+    "currency": "EGP",
+    "timezone": "Africa/Cairo"
+  },
+  "contactMessages": [],
+  "reviews": [
+    {
+      "id": 1,
+      "doctorId": 2,
+      "patientId": 6,
+      "rating": 5,
+      "comment": "Excellent doctor! Very professional and caring.",
+      "createdAt": "2026-01-15T14:00:00Z"
+    },
+    {
+      "id": 2,
+      "doctorId": 3,
+      "patientId": 8,
+      "rating": 5,
+      "comment": "Great with children! Highly recommend.",
+      "createdAt": "2026-01-17T11:00:00Z"
+    },
+    {
+      "id": 3,
+      "doctorId": 2,
+      "patientId": 7,
+      "rating": 4,
+      "comment": "Very knowledgeable and helpful.",
+      "createdAt": "2026-01-16T13:00:00Z"
+    }
+  ]
+}

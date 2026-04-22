@@ -1,0 +1,126 @@
+/* css/Doctor/calendar.css */
+
+.calendar-widget {
+    background: var(--bg-surface);
+    border-radius: 16px;
+    padding: 20px;
+    user-select: none;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-header h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.calendar-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.cal-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg-body);
+    color: var(--text-main);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.cal-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.weekdays-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.weekdays-grid span {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.calendar-day {
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+    position: relative;
+    border: 1px solid transparent;
+}
+
+.calendar-day:hover:not(.empty) {
+    background: rgba(106, 94, 253, 0.1);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.calendar-day.today {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.calendar-day.selected {
+    background: var(--primary);
+    color: white !important;
+    font-weight: 700;
+}
+
+.calendar-day.selected::after {
+    background: white !important;
+}
+
+.calendar-day.has-event::after {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    width: 4px;
+    height: 4px;
+    background: #ef4444;
+    border-radius: 50%;
+}
+
+.calendar-day.today.has-event::after {
+    background: white;
+}
+
+.calendar-day.empty {
+    cursor: default;
+}
+
+@media (max-width: 400px) {
+    .calendar-day {
+        font-size: 12px;
+    }
+}

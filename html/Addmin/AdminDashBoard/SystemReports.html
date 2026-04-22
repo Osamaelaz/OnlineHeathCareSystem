@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Reports - Admin Dashboard</title>
+
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../../css/Addmin/AdminDashBoard/AdminDashboard.css">
+    <link rel="stylesheet" href="../../../css/Addmin/AdminDashBoard/SystemReports.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-icon-only">
+                    <i class="fa-solid fa-shield-heart"></i>
+                </div>
+            </div>
+
+            <div class="sidebar-nav">
+                <a href="../../../html/Addmin/AdminDashBoard/AdminDashboard.html" class="nav-item"
+                    data-tooltip="Dashboard">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span class="item-text">Dashboard</span>
+                </a>
+                <a href="../../../html/Addmin/UserMangment/usermangment.html" class="nav-item"
+                    data-tooltip="User Management">
+                    <i class="fa-solid fa-users-gear"></i>
+                    <span class="item-text">User Management</span>
+                </a>
+                <a href="../../../html/Addmin/ApproveDoctors/ApproveDoctors.html" class="nav-item"
+                    data-tooltip="Approve Doctors">
+                    <i class="fa-solid fa-user-check"></i>
+                    <span class="item-text">Approve Doctors</span>
+                </a>
+                <a href="../../../html/Addmin/AdminDashBoard/SystemReports.html" class="nav-item active"
+                    data-tooltip="System Reports">
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <span class="item-text">System Reports</span>
+                </a>
+                <a href="../../../html/Addmin/AdminDashBoard/Settings.html" class="nav-item" data-tooltip="Settings">
+                    <i class="fa-solid fa-gear"></i>
+                    <span class="item-text">Settings</span>
+                </a>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="../../../index.html" class="nav-item" data-tooltip="Logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="item-text">Logout</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="nav">
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <button id="sidebarToggle" class="icon-btn" aria-label="Toggle sidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+                <div class="top-bar-right">
+                    <button id="themeToggle" class="icon-btn" title="Toggle Theme" aria-label="Toggle dark mode">
+                        <i class="fa-regular fa-moon"></i>
+                    </button>
+                    <div class="divider-vertical"></div>
+                    <div class="user-profile">
+                        <span class="user-name">Admin</span>
+                        <div class="profile-img-container">
+                            <img src="../../../images/admin-profile.png" alt="Profile" class="profile-img">
+                            <span class="status-dot-profile"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <main class="main-content reports-page">
+                <div class="page-header">
+                    <div class="page-title-section">
+                        <h1 class="page-title">
+                            <i class="fa-solid fa-file-invoice"></i> System Reports
+                        </h1>
+                        <p class="page-subtitle">Comprehensive analytics and insights about your healthcare system</p>
+                    </div>
+                    <div class="report-actions">
+                        <button class="btn btn-outline" id="exportBtn">
+                            <i class="fa-solid fa-download"></i> Export Report
+                        </button>
+                        <button class="btn btn-outline" id="refreshBtn">
+                            <i class="fa-solid fa-refresh"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon users">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h3 id="totalUsersMetric">0</h3>
+                            <p>Total Users</p>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon appointments">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h3 id="totalAppointmentsMetric">0</h3>
+                            <p>Total Appointments</p>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon revenue">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h3 id="totalRevenueMetric">$0</h3>
+                            <p>Total Revenue</p>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon prescriptions">
+                            <i class="fa-solid fa-prescription-bottle"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h3 id="totalPrescriptionsMetric">0</h3>
+                            <p>Total Prescriptions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h2><i class="fa-solid fa-chart-pie"></i> User Distribution</h2>
+                            <p>Breakdown of users by role</p>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="userDistributionChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h2><i class="fa-solid fa-chart-doughnut"></i> Appointments Status</h2>
+                            <p>Current status of all appointments</p>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="appointmentsStatusChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card chart-wide">
+                        <div class="chart-header">
+                            <h2><i class="fa-solid fa-chart-line"></i> Monthly Appointments Trend</h2>
+                            <p>Appointment activity over the last 6 months</p>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="monthlyTrendChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card chart-wide">
+                        <div class="chart-header">
+                            <h2><i class="fa-solid fa-chart-bar"></i> Top Performing Doctors</h2>
+                            <p>Doctors ranked by number of appointments</p>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="doctorPerformanceChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tables-grid">
+                    <div class="table-card">
+                        <div class="table-header">
+                            <h2><i class="fa-solid fa-table"></i> User Statistics</h2>
+                        </div>
+                        <div class="table-wrapper">
+                            <table class="stats-table">
+                                <thead>
+                                    <tr>
+                                        <th>Role</th>
+                                        <th>Total</th>
+                                        <th>Active</th>
+                                        <th>Inactive</th>
+                                        <th>Percentage</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="userStatsTableBody">
+                                    <tr>
+                                        <td colspan="5" style="text-align: center; padding: 20px;">Loading...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="table-card">
+                        <div class="table-header">
+                            <h2><i class="fa-solid fa-table"></i> Appointment Statistics</h2>
+                        </div>
+                        <div class="table-wrapper">
+                            <table class="stats-table">
+                                <thead>
+                                    <tr>
+                                        <th>Status</th>
+                                        <th>Count</th>
+                                        <th>Percentage</th>
+                                        <th>Revenue</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="appointmentStatsTableBody">
+                                    <tr>
+                                        <td colspan="4" style="text-align: center; padding: 20px;">Loading...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+            </main>
+        </div>
+    </div>
+
+    <script src="../../../storage.js"></script>
+    <script src="../../../script.js"></script>
+    <script src="../../../js/Addmin/AdminDashBoard/SystemReports.js"></script>
+</body>
+
+</html>
